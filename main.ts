@@ -3,6 +3,7 @@ import express from 'npm:express@4.18.2'
 import { createTables } from './configs/createTables.ts'
 import taskRouter from './routes/taskRouter.ts'
 import subTasks from './routes/subTaskRouter.ts'
+import { oakCors } from 'https://deno.land/x/cors@v1.2.2/mod.ts'
 
 const app = express()
 createTables()

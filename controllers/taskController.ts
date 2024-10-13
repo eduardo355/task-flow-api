@@ -12,6 +12,7 @@ export const insertTask = (name: string, icon: string) => {
   try {
     createTask(name, icon)
   } catch (error) {
+    console.log(error)
     return error
   }
 }

@@ -9,14 +9,23 @@ import {
 const router = express.Router()
 
 router.get('/', (_req: Request, res: Response) => {
-  const result = consultTask()
-  res.send(result)
+  try {
+    const result = consultTask()
+    console.log(result)
+    return res.json(result)
+  } catch (error) {
+    console.log(error)
+  }
 })
 
 router.post('/', (req: Request, res: Response) => {
-  const { name, icon } = req.body
-  insertTask(name, icon)
-  res.send(true)
+  try {
+    const { name, icon } = req.body
+    insertTask(name, icon)
+    res.send(true)
+  } catch (error) {
+    console.log(error)
+  }
 })
 
 router.get('/:id', (req: Request, res: Response) => {
